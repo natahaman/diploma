@@ -76,7 +76,7 @@
                     <h2 class="blog-post-title margin-bottom-0"><a href="${springMacroRequestContext.getContextPath()}/item/get/${blogs.id}">${blogs.title}</a></h2>
                     <div id="summary">
                         <div class="collapse" id="collapseContent${blogs.id}">${blogs.content}</div>
-                        <a class="collapsed" data-toggle="collapse" data-target="#collapseContent${blogs.id}" aria-controls="collapseContent"></a>
+                        <a class="collapsed" data-toggle="collapse" href="#collapseContent${blogs.id}" data-target="#collapseContent${blogs.id}" aria-controls="collapseContent"></a>
                     </div>
                     <p class="blog-post-meta">by ${blogs.author}</p>
 
