@@ -74,6 +74,10 @@
             <#list blogsList as blogs>
                 <div class="blog-post">
                     <h2 class="blog-post-title margin-bottom-0"><a href="${springMacroRequestContext.getContextPath()}/item/get/${blogs.id}">${blogs.title}</a></h2>
+                    <div id="summary">
+                        <div class="collapse" id="collapseContent${blogs.id}">${blogs.content}</div>
+                        <a class="collapsed" data-toggle="collapse" data-target="#collapseContent${blogs.id}" aria-controls="collapseContent"></a>
+                    </div>
                     <p class="blog-post-meta">by ${blogs.author}</p>
 
                     <#--<p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>-->
