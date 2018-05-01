@@ -7,6 +7,9 @@
     <title>All Blogs</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
 </head>
 
 <body class="body-style">
@@ -37,14 +40,40 @@
     <div>
         <h1>Latest Stories</h1>
         <p class="text-align-right">
-            <a class="btn btn-lg btn-primary" href="${springMacroRequestContext.getContextPath()}/item/new" role="button">Add
-                Post to Your Blog</a>
+            <#if isAuthorized>
+                <a class="btn btn-lg btn-primary" href="${springMacroRequestContext.getContextPath()}/item/new" role="button">Add Post to Your Blog</a>
+            <#else>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add Post to Your Blog</button>
+            </#if>
         </p>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Unauthorized action</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>You should be authorized to perform this action</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="modal_sign_in" type="button" class="btn btn-default" data-dismiss="modal">Sign in</button>
+                        <button id="modal_close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+
     </div>
     <div>
             <#list blogsList as blogs>
                 <div class="blog-post">
-                    <h2 class="blog-post-title margin-bottom-0"><a href="${springMacroRequestContext.getContextPath()}/item/${blogs.id}">${blogs.title}</a></h2>
+                    <h2 class="blog-post-title margin-bottom-0"><a href="${springMacroRequestContext.getContextPath()}/item/get/${blogs.id}">${blogs.title}</a></h2>
                     <p class="blog-post-meta">by ${blogs.author}</p>
 
                     <#--<p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>-->
@@ -77,7 +106,7 @@
                 </div>
                 <#--<p>-->
                     <#--${blogs.author}-->
-                    <#--<a href='${springMacroRequestContext.getContextPath()}/item/${blogs.id}'><h5 class="mb-1">${blogs.title}</h5></a>-->
+                    <#--<a href='${springMacroRequestContext.getContextPath()}/item/get/${blogs.id}'><h5 class="mb-1">${blogs.title}</h5></a>-->
                 <#--</p>-->
             </#list>
     </div>

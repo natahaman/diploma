@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/custom.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/custom.css" rel="stylesheet">
     </head>
     <body class="body-style">
     <div class="container">
@@ -22,7 +22,9 @@
             <br>
             <br>
             <a class="btn btn-lg btn-primary" href="${springMacroRequestContext.getContextPath()}/list" role="button">Return to Main Page</a>
+            <#if isAuthorized>
             <a class="btn btn-lg btn-primary" href="${springMacroRequestContext.getContextPath()}/item/remove/${id}" role="button">Remove</a>
+            </#if>
         </div>
     </div>
    </body>

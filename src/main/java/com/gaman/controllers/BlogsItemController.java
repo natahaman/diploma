@@ -23,14 +23,15 @@ public class BlogsItemController {
         this.blogsService = blogsService;
     }
 
-    @GetMapping(value = "/{id}")
-    public String showItem(Model model, @PathVariable(value = "id") Long itemId){
+    @GetMapping(value = "/get/{id}")
+    public String showItem(Model model, @PathVariable(value = "id") Long itemId, Principal principal){
         Blogs blogs = blogsService.getById(itemId);
         model.addAttribute("id", String.valueOf(blogs.getId()));
         model.addAttribute("title", blogs.getTitle());
         model.addAttribute("date", formatter.format(blogs.getDate()));
         model.addAttribute("author", blogs.getAuthor());
         model.addAttribute("content", blogs.getContent());
+        model.addAttribute("isAuthorized", principal != null);
         return "blogsExistingItem";
     }
 
@@ -51,7 +52,7 @@ public class BlogsItemController {
                           @ModelAttribute(value = "content") String content
     ){
         Long blogsId = blogsService.create(author, title, content);
-        return String.format("redirect:/item/%d", blogsId);
+        return String.format("redirect:/item/get/%d", blogsId);
     }
 
     @GetMapping(value = "/remove/{id}")
