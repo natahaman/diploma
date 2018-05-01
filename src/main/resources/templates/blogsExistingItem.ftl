@@ -17,7 +17,7 @@
             <div>
                 <label for="content_id" class="sr-only">Content</label>
                 <textarea readonly id="content_id" name="content" class="form-control" style="background-color: lightblue;"
-                          placeholder="Content" rows="25" cols="130">${content}</textarea>
+                          placeholder="Content" rows="15" cols="130">${content}</textarea>
             </div>
             <br>
             <br>

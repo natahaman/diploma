@@ -15,7 +15,7 @@
         <div class="blog-post">
             <h2 class="blog-post-title">Input Your Story Here:</h2>
             <div class="text-align-right">
-                <label class="form-check-label font-weight-400" for="checkbox_id">Enable voice recognition</label>
+                <label class="form-check-label font-weight-400" for="checkbox_id">Enable voice recording</label>
                 <input type="checkbox" class="form-check-input" id="checkbox_id" onchange="onChangeVoiceRecognition()">
             </div>
         <form action="${springMacroRequestContext.getContextPath()}/item/add" method="post">
@@ -29,7 +29,7 @@
 
             <label for="content_id" class="sr-only">Content</label>
             <textarea id="content_id" name="content" class="form-control"
-                      placeholder="Content" required="" rows="25" cols="130">${content}</textarea>
+                      placeholder="Content" required="" rows="15" cols="130">${content}</textarea>
 
             <br>
             <a class="btn btn-lg btn-primary" href="${springMacroRequestContext.getContextPath()}/list" role="button">Return to Main Page</a>
