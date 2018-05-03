@@ -21,7 +21,7 @@
 
 .blog-post-meta {
     margin-bottom: 1.25rem;
-    color: #999;
+    color: #5f5151;
 }
 
 .font-weight-400{
@@ -39,8 +39,7 @@
 }
 
 .body-style {
-    background-color: lightblue;
-    text-align: center;
+   text-align: center;
 }
 
 #summary {
