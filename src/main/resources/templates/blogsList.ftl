@@ -21,10 +21,17 @@
                     <h2 class="form-signin-heading">Please sign in</h2>
                     <label for="inputUser" class="sr-only">Login</label>
                     <input name="username" type="text" id="inputUser" class="form-control"
-                           placeholder="Login" required="" autofocus="">
+                           placeholder="Login" required="" autofocus="" aria-describedby="login-help">
+                           <div id="login-help" hidden>
+                                                                          Test login is user
+                                                                          </div>
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input name="password" type="password" id="inputPassword" class="form-control"
-                           placeholder="Password" required="">
+                    <input name="password" type="password" id="inputPassword"
+                                        class="form-control"
+                           placeholder="Password" required=""  aria-describedby="pw-help">
+                                              <div id="pw-help" hidden>
+                                               Test password is 123
+                                               </div>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
                 </form>
             </div>
