@@ -16,8 +16,9 @@
             <h2 class="blog-post-title">Input Your Story Here:</h2>
             <div class="text-align-right">
                 <label class="form-check-label font-weight-400" for="checkbox_id">Enable voice recording</label>
-                <input type="checkbox" class="form-check-input" id="checkbox_id" onchange="onChangeVoiceRecognition()">
-            </div>
+                <input type="checkbox" name="Voice recorder for blogs title and content filling in" class="form-check-input"
+                 id="checkbox_id" onchange="onChangeVoiceRecognition()">
+                  </div>
         <form action="${springMacroRequestContext.getContextPath()}/item/add" method="post">
             <label for="inputAuthor" class="sr-only">Author</label>
             <input name="author" type="text" id="inputAuthor" class="form-control"
@@ -27,7 +28,7 @@
             <input name="title" type="text" id="title_id" class="form-control"
                    placeholder="Title" required="" value="${title}" size="128">
 
-            <label for="content_id" class="sr-only">Content</label>
+            <label for="content_id" class="sr-only">Say content to start voice recording and add content to continue voice recording</label>
             <textarea id="content_id" name="content" class="form-control"
                       placeholder="Content" required="" rows="15" cols="130">${content}</textarea>
 
